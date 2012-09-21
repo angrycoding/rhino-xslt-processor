@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="build" basedir=".">
+
+	<!-- define classpath -->
+	<path id="classpath">
+		<!-- path to Mozilla Rhino JavaScript engine -->
+		<pathelement location="../lib/js.jar" />
+		<!-- path to the Saxon processor -->
+		<pathelement location="../lib/saxon9.jar" />
+		<!-- path to the Saxon DOM classes -->
+		<pathelement location="../lib/saxon9-dom.jar" />
+	</path>
+
+	<!-- main target -->
+	<target name="build" description="build">
+		<exec executable="java">
+			<arg value="-classpath" />
+			<arg value="${toString:classpath}" />
+			<arg line="org.mozilla.javascript.tools.shell.Main" />
+			<arg line="build.js" />
+		</exec>
+	</target>
+
+</project>

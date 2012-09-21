@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="build" basedir=".">
+
+	<target name="build" description="build">
+		<echo>generating XSLTProcessor.class</echo>
+		<exec executable="java">
+			<arg line="-classpath lib/js.jar" />
+			<arg line="org.mozilla.javascript.tools.jsc.Main" />
+			<arg line="-nosource" />
+			<arg line="-opt 9" />
+			<arg line="-d ." />
+			<arg line="src/XSLTProcessor.js" />
+		</exec>
+	</target>
+
+</project>
